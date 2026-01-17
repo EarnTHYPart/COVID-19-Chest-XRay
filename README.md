@@ -126,7 +126,7 @@ conda activate covid-xray
 pip install torch torchvision matplotlib pillow numpy
 ```
 
-Or install from requirements.txt (if available):
+Or install from requirements.txt:
 ```bash
 pip install -r requirements.txt
 ```
@@ -293,3 +293,19 @@ For issues, questions, or contributions, please open an issue on the [GitHub rep
 ---
 
 **Happy Learning!** 🚀
+
+---
+
+## Model Saving & Evaluation
+
+New convenience cells have been added at the end of the notebook:
+
+- **Evaluation Metrics:** Computes overall test accuracy, a confusion matrix, and per-class precision/recall. It will also render a confusion matrix plot for quick visual inspection.
+- **Model Save/Load + TorchScript:** Saves the trained `resnet18` weights to `models/resnet18_covid_xray.pth`, demonstrates loading them into a fresh model, and optionally exports a TorchScript module to `models/resnet18_covid_xray_script.pt` for deployment.
+
+### How to Use
+- Run all training cells as usual.
+- Execute the new "Evaluation" cell to see metrics and the confusion matrix.
+- Execute the "Save and Load Model" cell to persist weights and produce a TorchScript artifact.
+
+Artifacts will be written under the `models/` folder, which is created automatically if it doesn't exist.
